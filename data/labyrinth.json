@@ -1,0 +1,112 @@
+{
+  "intro": "You're a baby golden retriever and your owner just left you at the vet's office. You have to get out of here as fast as you can or you'll be stuck with the evil vets forever!! You can't leave without your COLLAR though or your owner won't recognize you. Use the commands: GO, LOOK, TAKE, USE, INVENTORY, QUIT to navigate this labyrinth.",
+  "goalItem": "COLLAR",
+  "goalItemLoc": "MAIN OFFICE",
+  "goalArea": "WAITING ROOM",
+  "startLoc": "CLINIC",
+  "monsterStart": "MAIN OFFICE",
+
+  "monster": {
+    "name": "BIG DOG",
+    "desc": "Oh no! You've encountered the BIG DOG who wanders the rooms looking for animals who are trying to escape!",
+    "descL": "GAME OVER! You failed to bribe BIG DOG with the biscuit, BIG DOG barks letting the vets find you.",
+    "distracted": "This BIG DOG is always hungry. He eats the BISCUIT and falls asleep.",
+    "weakness": "BISCUIT"
+  },
+
+  "hazards": [
+    {
+      "name": "NURSE",
+      "desc": "The mean NURSE is working on some paperwork. She'll put you into a cage if she spots you!",
+      "distracted": "The NURSE is distracted by her phone and ignores you.",
+      "weakness": "IPHONE"
+    },
+    {
+      "name": "CLERK",
+      "desc": "Careful! The CLERK is watching to make sure that there are no escaped animals.",
+      "distracted": "The CLERK can't see you because he's hiding behind his desk.",
+      "weakness": "TOY SNAKE"
+    }
+  ],
+
+  "items": [
+    {
+      "name": "BISCUIT",
+      "desc": "You spot a tasty dog BISCUIT next to you.",
+      "action": "You take the BISCUIT out and its smell wafts across the room."
+    },
+    {
+      "name": "IPHONE",
+      "desc": "You spot the nurse's brand new IPHONE plugged into the wall.",
+      "action": "You leave the IPHONE near the doorway and it rings."
+    },
+    {
+      "name": "TOY SNAKE",
+      "desc": "There's a TOY SNAKE in the lost and found box.",
+      "action": "You throw the TOY SNAKE into the middle of the room and it terrifies everyone."
+    },
+    {
+      "name": "COLLAR",
+      "desc": "There's a bright red COLLAR with your name on it on the desk.",
+      "action": "You wear your COLLAR."
+    }
+  ],
+
+  "areas": [
+    {
+      "name": "CLINIC",
+      "desc": "You find yourself in a white room with a cold metal examination table.",
+      "items": ["BISCUIT"],
+      "hazard": null,
+
+      "north": null,
+      "south": null,
+      "east": "WAITING ROOM",
+      "west": "OPERATING ROOM"
+    },
+    {
+      "name": "OPERATING ROOM",
+      "desc": "A very clean room with an operating table. You'll end up there if you don't get out in time!",
+      "items": ["IPHONE"],
+      "hazard": null,
+
+      "north": "ANIMAL RECOVERY",
+      "south": null,
+      "east": "CLINIC",
+      "west": null
+    },
+    {
+      "name": "MAIN OFFICE",
+      "desc": "You're in a room with filing cabinets and the vet's desk.",
+      "items": ["COLLAR"],
+      "hazard": "NURSE",
+
+      "north": "WAITING ROOM",
+      "south": null,
+      "east": null,
+      "west": null
+    },
+    {
+      "name": "WAITING ROOM",
+      "desc": "You see some pets and owners waiting for their turn with the vet. There's the front door and a way out...if only you had your collar.",
+      "items": [],
+      "hazard": "CLERK",
+
+      "north": "ANIMAL RECOVERY",
+      "south": "MAIN OFFICE",
+      "east": null,
+      "west": "CLINIC"
+    },
+    {
+      "name": "ANIMAL RECOVERY",
+      "desc": "A room full of cages for animals to recover in post surgery.",
+      "items": ["TOY SNAKE"],
+      "hazard": null,
+
+      "north": null,
+      "south": "OPERATING ROOM",
+      "east": "CLINIC",
+      "west": null
+    }
+  ]
+}
